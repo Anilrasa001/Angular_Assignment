@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 text-center">
+        <h1>Welcome to Student Portal</h1>
+        <p class="lead">Your gateway to online learning</p>
+        <div *ngIf="!isLoggedIn()" class="mt-4">
+          <a routerLink="/register" class="btn btn-primary btn-lg">Register Now</a>
+        </div>
+        <div *ngIf="isLoggedIn()" class="mt-4">
+          <a routerLink="/dashboard" class="btn btn-success btn-lg">Go to Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </div>

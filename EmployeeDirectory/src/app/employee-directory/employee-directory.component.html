@@ -1,0 +1,40 @@
+<div class="container mt-4">
+    <h3>Add Employee</h3>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <input type="text" class="form-control" formControlName="name" placeholder="Employee Name">
+        </div>
+        <div class="col-md-3 mb-3">
+          <input type="text" class="form-control" formControlName="department" placeholder="Department">
+        </div>
+        <div class="col-md-3 mb-3">
+          <input type="email" class="form-control" formControlName="email" placeholder="Email">
+        </div>
+        <div class="col-md-3 mb-3">
+          <input type="text" class="form-control" formControlName="mobile" placeholder="Mobile Number">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="employeeForm.invalid">Add Employee</button>
+    </form>
+  
+    <table class="table table-bordered table-striped mt-4" *ngIf="employees.length > 0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Email</th>
+          <th>Mobile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.department }}</td>
+          <td>{{ emp.email }}</td>
+          <td>{{ emp.mobile }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
